@@ -1,0 +1,17 @@
+---
+version: '3.8'
+
+services:
+  practice-app:
+      build:
+        context: .
+      image: practice-rails-react
+      container_name: practice-app
+      ports: 
+      - "30000:3000"
+      volumes:
+      - ./src:/usr/src/app
+      environment:
+        RAILS_ENV: development
+      stdin_open: true # docker run -i
+      tty: true        # docker run -t
